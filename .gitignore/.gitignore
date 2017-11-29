@@ -1,0 +1,51 @@
+import java.util.Scanner;
+class Demo{
+public static void main(String [] args){
+int stars=1;
+		Scanner sc= new Scanner(System.in);
+		int a=sc.nextInt();
+		int spaces= a-1;
+		for(int i=1;i<=spaces;i++){
+			System.out.print(" ");
+		}
+		System.out.print("x");
+		System.out.println();
+		for(int i=1;i<=spaces;i++){
+			System.out.print(" ");
+		}
+		System.out.print("|");
+		System.out.println();
+		for(int row=1;row<=a;row++){
+			for(int space=0;space<spaces;space++){
+				System.out.print(" ");
+			}
+			for(int col=1;col<=stars;col++){
+				if((col==1 || col==stars || row==a)){
+				System.out.print("*");
+				}else{
+					if(Math.random()<0.6){
+						System.out.print("@");
+					}else{
+					System.out.print(" ");
+					}
+				}
+			}
+			stars+=2;
+			System.out.println();
+			spaces--;
+		}
+	spaces=a-1;
+	for(int i=1;i<=a;i++){
+	for(int j=1;j<=spaces;j++){
+		System.out.print(" ");
+	}
+		System.out.print("|");
+		System.out.println();
+	}
+	
+	for(int i=1;i<=a*2;i++){
+		System.out.print("*");
+	}
+}
+
+}
